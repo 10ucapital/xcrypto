@@ -104,6 +104,8 @@ impl Trade for SpotTrade {
                 let symbol = order.symbol.clone();
                 let price = order.price;
                 let quantity = order.quantity;
+                let price = (price*100.0).round()/100.0;
+                let quantity = (quantity*10000000.0).round()/10000000.0;
                 let side = order.side.clone();
                 let order_type = order.order_type.clone();
                 let tif = order.tif.clone();
